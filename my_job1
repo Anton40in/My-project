@@ -1,0 +1,36 @@
+pipelineJob('my_job1') {
+
+    description('my_job1/ci')
+
+    triggers {
+        githubPush()
+    }
+
+    definition {
+        cps {
+            properties {
+                githubProjectUrl('https://github.com/Anton40in/My-project.git')
+            }
+
+            logRotator {
+                numToKeep(20)
+                daysToKeep(30)
+            }
+
+            scm {
+                git {
+                    remote {
+                        url('https://github.com/Anton40in/My-project.git')
+                        credentials('public')
+                    }
+                    branches('*/master')
+                }
+            }
+
+            sandbox()
+            script('''
+            buildPipeline {}
+            ''')
+        }
+    }
+}
