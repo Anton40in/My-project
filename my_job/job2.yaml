@@ -1,6 +1,0 @@
-- job:
-    name: Test JJB2
-    description: 'Do not edit this job through the web!'
-    project-type: freestyle
-    builders:
-    - shell: echo "Thank you"
