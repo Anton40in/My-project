@@ -30,8 +30,7 @@ pipeline {
                                 echo "Docker Created"
                               }
                            }
-                           }
-                           }
+              
                  stage('Prod') {
                      steps {
                                 echo "App is Prod Ready"
