@@ -20,9 +20,9 @@ pipeline {
                            }
                             stage('Deploying now') {
                             agent {
-                                    docker {
-                                            reuseNode true
-                                            image ‘Hello world’
+                                   docker {
+                                           reuseNode true
+                                           image ‘Hello world’
                                            }
                                     }
 
